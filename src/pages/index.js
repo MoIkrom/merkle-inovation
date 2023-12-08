@@ -1,7 +1,8 @@
 import Login from "./Login";
-import Register from "./Register";
+import NewUser from "./NewUser";
 import Home from "./Home";
 import User from "./User";
 import DetailUser from "./DetailUser";
+import Edit from "./Edit";
 
-export { Home, Login, Register,User,DetailUser };
+export { Home, Login, NewUser, User, DetailUser, Edit };

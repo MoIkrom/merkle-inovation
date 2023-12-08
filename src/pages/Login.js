@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { login } from "../Utils/API";
 import { Button, Form } from "react-bootstrap";
-import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 
@@ -37,8 +36,8 @@ function Login() {
           timer: 1500,
         });
         setTimeout(() => {
-          navigate("/user");
-        }, 1000);
+          navigate("/users");
+        }, 1500);
       })
       .catch((error) => {
         setLoading(false);
@@ -80,12 +79,6 @@ function Login() {
                 </Button>
               </div>
             </Form>
-          </div>
-
-          <div className="text-center">
-            <p>
-              Dont Have an Account ? <Link to="/register">Register Here</Link>
-            </p>
           </div>
         </div>
       </div>

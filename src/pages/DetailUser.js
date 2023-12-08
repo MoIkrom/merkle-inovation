@@ -86,8 +86,8 @@ function DetailUser({ route }) {
                   <Link to={`/edit-user/${user.id}`}>
                     <Button variant="success">Edit</Button>
                   </Link>
-                  <Link to={`/user`}>
-                    <Button variant="secondary">Kembali</Button>
+                  <Link to={`/users`}>
+                    <Button variant="secondary">Back</Button>
                   </Link>
                 </div>
               )}

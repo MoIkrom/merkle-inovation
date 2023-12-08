@@ -13,7 +13,6 @@
 - [Features](#features)
 - [Requirements](#requirements)
 - [Usage](#usage-for-development)
-- [Screenshots](#screenshots)
 
 ## Introduction
 

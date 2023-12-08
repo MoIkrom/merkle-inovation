@@ -1,16 +1,16 @@
 import React, { useState, useEffect } from "react";
-import { allUser, deleteUser, totalUser } from "../Utils/API";
-import { Card, Button, Pagination } from "react-bootstrap";
+import { allUser, deleteUser } from "../Utils/API";
+import { Card, Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
 import "../css/login.css";
 
 function User(props) {
-  const [data, setData] = useState([]);
+  //   const [data, setData] = useState([]);
   const [user, setUser] = useState([]);
   const [loading, setLoading] = useState(false);
-  const [currentPage, setCurrentPage] = useState(1);
-  const [totalPages, setTotalPages] = useState(1);
+  //   const [currentPage, setCurrentPage] = useState(1);
+  //   const [totalPages, setTotalPages] = useState(1);
   const limit = 10;
 
   const getAllUser = () => {
@@ -25,15 +25,15 @@ function User(props) {
       });
   };
 
-  const getTotalUser = () => {
-    totalUser()
-      .then((res) => {
-        setData(res.data);
-      })
-      .catch((err) => {
-        console.log(err);
-      });
-  };
+  //   const getTotalUser = () => {
+  //     totalUser()
+  //       .then((res) => {
+  //         setData(res.data);
+  //       })
+  //       .catch((err) => {
+  //         console.log(err);
+  //       });
+  //   };
 
   const openModal = (id) => {
     Swal.fire({
@@ -61,32 +61,32 @@ function User(props) {
     });
   };
 
-  let dataLength = data.length;
-  let totalPage = Math.ceil(dataLength / limit);
+  //   let dataLength = data.length;
+  //   let totalPage = Math.ceil(dataLength / limit);
 
   useEffect(() => {
     getAllUser();
-    getTotalUser();
-    setTotalPages(totalPage);
-  }, [totalPage]);
+    // getTotalUser();
+    // setTotalPages(totalPage);
+  }, []);
 
-  const handlePaginationClick = (page) => {
-    setCurrentPage(page);
-    console.log(page);
-  };
+  //   const handlePaginationClick = (page) => {
+  //     setCurrentPage(page);
+  //     console.log(page);
+  //   };
 
-  let items = [];
-  for (let number = currentPage; number <= totalPage; number++) {
-    items.push(
-      <Pagination.Item
-        key={number}
-        active={number === currentPage}
-        //   onClick={() => handlePaginationClick(number)}
-      >
-        {number}
-      </Pagination.Item>
-    );
-  }
+  //   let items = [];
+  //   for (let number = currentPage; number <= totalPage; number++) {
+  //     items.push(
+  //       <Pagination.Item
+  //         key={number}
+  //         active={number === currentPage}
+  //         //   onClick={() => handlePaginationClick(number)}
+  //       >
+  //         {number}
+  //       </Pagination.Item>
+  //     );
+  //   }
 
   return (
     <div>
